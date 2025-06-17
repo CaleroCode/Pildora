@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f2f2f2;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.panel-izquierdo {
+  width: 55%;
+  background: #1e1e1e;
+  color: white;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+.panel-izquierdo h2 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.panel-izquierdo pre {
+  background-color: #2d2d2d;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: background 0.3s;
+  white-space: pre-wrap;
+}
+
+.panel-izquierdo pre:hover {
+  background-color: #3e3e3e;
+}
+
+.panel-izquierdo code {
+  font-family: monospace;
+  color: #adff2f;
+}
+
+.panel-derecho {
+  width: 45%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.caja {
+  width: 160px;
+  height: 160px;
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+}
+
+
+/* Animaciones CSS */
+.fade         { animation: fadeIn 1s forwards; }
+.slide        { animation: slideIn 0.5s forwards; }
+.grow         { animation: growBox 0.5s forwards; }
+.rotate       { animation: rotateBox 1s forwards; }
+.bounce       { animation: bounceBox 1s forwards; }
+.flip         { animation: flipBox 1s forwards; }
+.pulse        { animation: pulseBox 1s forwards; }
+.shake        { animation: shakeBox 0.5s forwards; }
+.zoom         { animation: zoomIn 0.5s forwards; }
+.fadeSlide    { animation: fadeSlide 0.6s forwards; }
+.spin         { animation: spinBox 1s forwards; }
+.wiggle       { animation: wiggleBox 0.6s forwards; }
+.pop          { animation: popBox 0.4s forwards; }
+.slideRight   { animation: slideRight 0.6s forwards; }
+.drift        { animation: driftBox 1s infinite; }
+
+/* Keyframes */
+@keyframes fadeIn      { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideIn     { from { transform: translateX(-200px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes growBox     { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes rotateBox   { from { transform: rotate(-180deg); opacity: 0; } to { transform: rotate(0); opacity: 1; } }
+@keyframes bounceBox   { 0% {transform: translateY(0);} 30% {transform: translateY(-40px);} 50% {transform: translateY(0);} 70% {transform: translateY(-20px);} 100% {transform: translateY(0);} }
+@keyframes flipBox     { from { transform: rotateY(0); } to { transform: rotateY(360deg); } }
+@keyframes pulseBox    { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+@keyframes shakeBox    { 0% { transform: translateX(0); } 25% { transform: translateX(-10px); } 50% { transform: translateX(10px); } 75% { transform: translateX(-10px); } 100% { transform: translateX(0); } }
+@keyframes zoomIn      { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes fadeSlide   { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes spinBox     { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+@keyframes wiggleBox   { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+@keyframes popBox      { 0% { transform: scale(0.8); opacity: 0; } 60% { transform: scale(1.05); opacity: 1; } 100% { transform: scale(1); } }
+@keyframes slideRight  { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes driftBox    { 0% { transform: translateX(0); } 50% { transform: translateX(20px); } 100% { transform: translateX(0); } }

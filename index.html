@@ -1,0 +1,131 @@
+<!-- web simple con ejemplos de animaciones para mis compañer@s del Bootcamp SuperKode -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pildora Calero</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="panel-izquierdo">
+      <h2>EJEMPLOS EN CSS</h2>
+
+      <pre onclick="cambiarAnimacion('fade')"><code>/* Fade In */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}</code></pre>
+
+      <pre onclick="cambiarAnimacion('slide')"><code>/* Slide In */
+@keyframes slideIn {
+  from { transform: translateX(-200px); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}</code></pre>
+
+      <pre onclick="cambiarAnimacion('grow')"><code>/* Grow */
+@keyframes growBox {
+  from { transform: scale(0.5); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}</code></pre>
+
+      <pre onclick="cambiarAnimacion('rotate')"><code>/* Rotate */
+@keyframes rotateBox {
+  from { transform: rotate(-180deg); opacity: 0; }
+  to   { transform: rotate(0); opacity: 1; }
+}</code></pre>
+
+      <pre onclick="cambiarAnimacion('bounce')"><code>/* Bounce */
+@keyframes bounceBox {
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(-40px); }
+  50%  { transform: translateY(0); }
+  70%  { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}</code></pre>
+
+      <pre onclick="cambiarAnimacion('flip')"><code>/* Flip */
+@keyframes flipBox {
+  from { transform: rotateY(0); }
+  to   { transform: rotateY(360deg); }
+}</code></pre>
+
+      <pre onclick="cambiarAnimacion('pulse')"><code>/* Pulse */
+@keyframes pulseBox {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}</code></pre>
+
+      <pre onclick="cambiarAnimacion('shake')"><code>/* Shake */
+@keyframes shakeBox {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateX(-10px); }
+  50%  { transform: translateX(10px); }
+  75%  { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}</code></pre>
+
+      <pre onclick="cambiarAnimacion('zoom')"><code>/* Zoom In */
+@keyframes zoomIn {
+  from { transform: scale(0); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}</code></pre>
+
+      <pre onclick="cambiarAnimacion('fadeSlide')"><code>/* Fade + Slide */
+@keyframes fadeSlide {
+  from { transform: translateY(50px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}</code></pre>
+
+      <pre onclick="cambiarAnimacion('spin')"><code>/* Spin */
+@keyframes spinBox {
+  from { transform: rotate(0); }
+  to   { transform: rotate(360deg); }
+}</code></pre>
+
+      <pre onclick="cambiarAnimacion('wiggle')"><code>/* Wiggle */
+@keyframes wiggleBox {
+  0%, 100% { transform: rotate(-3deg); }
+  50%      { transform: rotate(3deg); }
+}</code></pre>
+
+      <pre onclick="cambiarAnimacion('pop')"><code>/* Pop */
+@keyframes popBox {
+  0%   { transform: scale(0.8); opacity: 0; }
+  60%  { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
+}</code></pre>
+
+      <pre onclick="cambiarAnimacion('slideRight')"><code>/* Slide Right */
+@keyframes slideRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}</code></pre>
+
+      <pre onclick="cambiarAnimacion('drift')"><code>/* Drift */
+@keyframes driftBox {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(20px); }
+  100% { transform: translateX(0); }
+}</code></pre>
+    </aside>
+
+    <section class="panel-derecho">
+      <div id="resultado" class="caja">Animación</div>
+    </section>
+  </div>
+
+  <script>
+    function cambiarAnimacion(tipo) {
+      const resultado = document.getElementById('resultado');
+      resultado.className = 'caja';
+      void resultado.offsetWidth;
+      resultado.classList.add(tipo);
+    }
+  </script>
+</body>
+</html>
+
