@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    canvas { background: #f0f0f0; display: block; margin: auto; }
+  </style>
+</head>
+<body>
+<canvas id="lienzo" width="400" height="300"></canvas>
+<script>
+  const canvas = document.getElementById('lienzo');
+  const ctx = canvas.getContext('2d');
+
+  // configuración pelota
+  let x = 200;
+  let y = 50;
+  let vy = 0;
+  const gravity = 0.5;
+  const jumpVelocity = -10; // velocidad constante al rebotar
+  const radius = 20;
+
+  // Control de FPS
+  let fps = 120; // puedes modificar este valor para cambiar los FPS
+  let interval = 1000 / fps;
+  let lastTime = 0;
+
+  function animar(timestamp) {
+    if (!lastTime) lastTime = timestamp;
+    const elapsed = timestamp - lastTime;
+
+    if (elapsed >= interval) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, Math.PI * 2);
+      ctx.fillStyle = "blue";
+      ctx.fill();
+      ctx.closePath();
+
+      y += vy;
+      vy += gravity;
+
+      // Rebote
+      if (y + radius >= canvas.height) {
+        y = canvas.height - radius;
+        vy = jumpVelocity;
+      }
+
+      lastTime = timestamp;
+    }
+
+    requestAnimationFrame(animar);
+  }
+
+  requestAnimationFrame(animar);
+</script>
+</body>
+</html>
